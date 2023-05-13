@@ -38,6 +38,10 @@
       description: Autopirate file browser
       href: http://autopirate.local:8090
       icon: filebrowser.png
+  - Zbox PVE:
+      description: Hypervisor node
+      href: https://zbox.local:8006
+      icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
   - Mini11 PVE:
       description: Hypervisor node
       href: https://mini11.local:8006
