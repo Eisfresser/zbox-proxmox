@@ -1,0 +1,19 @@
+# https://hub.docker.com/r/linuxserver/radarr
+
+---
+version: "2.1"
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1027
+      - PGID=100
+      - TZ="Europe/Zurich"
+    volumes:
+      - /autopirate/config/radarr:/config
+      - /autopirate/media/movies:/movies 
+      - /autopirate/downloads:/downloads 
+    ports:
+      - 7878:7878
+    restart: unless-stopped

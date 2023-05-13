@@ -1,0 +1,19 @@
+# https://hub.docker.com/r/linuxserver/readarr
+
+---
+version: "2.1"
+services:
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    environment:
+      - PUID=1027
+      - PGID=100
+      - TZ="Europe/Zurich"
+    volumes:
+      - /autopirate/config/readarr:/config
+      - /autopirate/media/books:/books
+      - /autopirate/downloads:/downloads
+    ports:
+      - 8787:8787
+    restart: unless-stopped

@@ -1,6 +1,6 @@
 - Autopirate:
   - Jellyfin:
-      description: An alternative to the proprietary Emby and Plex
+      description: Media server, username is flieder, no password
       href: http://autopirate.local:8096/
       icon: jellyfin.png
   - Plex:
@@ -10,20 +10,20 @@
   - Radarr:
       description: Radarr is a movie collection manager for Usenet and BitTorrent
         users
-      href: http://autopirate.local
+      href: http://autopirate.local:7878
       icon: radarr.png
   - Sonarr:
       description: Sonarr is an internet PVR for Usenet and Torrents
-      href: http://autopirate.local
+      href: http://autopirate.local:8989
       icon: sonarr.png
   - Readarr:
       description: Readarr is a ebook collection manager for Usenet and BitTorrent
         users
-      href: http://autopirate.local
+      href: http://autopirate.local:8787
       icon: readarr.png
   - Prowlarr:
       description: Indexer manager/proxy built on the popular *arr stack
-      href: http://autopirate.local
+      href: http://autopirate.local:9696
       icon: prowlarr.png
   - qBittorrent:
       description: Torrent client
@@ -32,7 +32,7 @@
       widget:
         type: qbittorrent
         url: http://autopirate.local:8080
-        username: admin
+        # username: admin
 - Appliances:
   - Filebrowser:
       description: Autopirate file browser

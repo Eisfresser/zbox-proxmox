@@ -1,0 +1,19 @@
+# https://hub.docker.com/r/linuxserver/plex
+---
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1027
+      - PGID=100
+      - TZ="Europe/Zurich"
+      - VERSION=docker
+      - PLEX_CLAIM= #optional
+    volumes:
+      - /autopirate/config/plex:/config
+      - /autopirate/media/tvseries:/tv
+      - /autopirate/media/movies:/movies       
+    restart: unless-stopped

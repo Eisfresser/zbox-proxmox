@@ -1,0 +1,21 @@
+# https://hub.docker.com/r/linuxserver/jellyfin
+---
+version: "2.1"
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1027
+      - PGID=100
+      - TZ="Europe/Zurich"
+    volumes:
+      - /autopirate/config/jellyfin:/config
+      - /autopirate/media/tvseries:/data/tvshows
+      - /autopirate/media/movies:/data/movies 
+    ports:
+      - 8096:8096
+      - 8920:8920 
+      - 7359:7359/udp 
+      - 1900:1900/udp 
+    restart: unless-stopped

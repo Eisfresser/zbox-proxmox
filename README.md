@@ -57,6 +57,21 @@ mount -t nfs 192.168.1.18:/autopirate /autopirate
 Add to /etc/fstab: ```192.168.1.18:/volume1/autopirate/media  /autopirate/media  nfs  defaults``` (use tabs not blanks)
 Use ```mount -a```to test fstab without rebooting.
 
-Create autopirate user ```useradd -u 1027 -g users autopirate````
+### Create user and locale
 
+```bash
+groupadd -g 100 users
+useradd -u 1027 -g users autopirate```
+echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen en_US.UTF-8
+```
 
+### Start stop
+
+```bash
+cd /autopirate
+docker compose -f readarr.yml up
+./autopirate.sh up
+````

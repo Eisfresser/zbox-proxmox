@@ -11,7 +11,7 @@ services:
     environment:
       - PUID=1027
       - PGID=100
-      - TZ=Etc/UTC
+      - TZ="Europe/Zurich"
       - WEBUI_PORT=8080
     volumes:
       - /autopirate/config:/config

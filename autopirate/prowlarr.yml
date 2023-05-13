@@ -1,0 +1,17 @@
+# https://hub.docker.com/r/linuxserver/prowlarr
+---
+version: "2.1"
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1027
+      - PGID=100
+      - TZ="Europe/Zurich"
+    volumes:
+      - /autopirate/config/prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+
