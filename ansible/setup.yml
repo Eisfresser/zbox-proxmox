@@ -1,0 +1,165 @@
+# Initial server setup
+# from https://www.vultr.com/docs/how-to-configure-a-debian-11-bullseye-server-with-ansible/
+
+---
+
+- hosts: debians
+  become: true
+  vars:
+    ssh_port: "22"
+    tmzone: Europe/Zurich
+    sudo_timeout: 60
+    username: rolf
+
+  tasks:
+    # Update and install the base software
+    - name: Update apt package cache.
+      apt:
+        update_cache: yes
+        cache_valid_time: 600
+
+    - name: Upgrade installed apt packages.
+      apt:
+        upgrade: dist
+      register: upgrade
+
+    - name: Ensure that a base set of software packages are installed.
+      apt:
+        pkg:
+          - build-essential
+          - curl
+          - wget
+          - git
+          - htop
+          - bpytop
+          - net-tools
+          - sudo
+          - sysbench
+          - python3
+          - python3-pip
+          - lshw
+          - ca-certificates 
+          - gnupg
+        state: latest
+
+    - name: Check if a reboot is needed for Debian-based systems
+      stat:
+        path: /var/run/reboot-required
+      register: reboot_required
+
+    # - name: Set hostname
+    #   hostname:
+    #     name: "{{ inventory_hostname }}"
+
+    - name: Set timezone.
+      timezone:
+        name: "{{ tmzone }}"
+      notify:
+        - restart cron
+
+    - name: Set ssh port port number
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: "Port "
+        line: "Port {{ ssh_port }}"
+        state: present
+      notify:
+        - restart sshd
+
+    - name: Set sudo password timeout.
+      lineinfile:
+        path: /etc/sudoers
+        regexp: '^Defaults\tenv_reset'
+        line: "Defaults    env_reset, timestamp_timeout={{ sudo_timeout }}"
+        validate: "/usr/sbin/visudo -cf %s"
+
+    # configure root user
+    - name: Disable root password login via SSH.
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^#?PermitRootLogin"
+        line: "PermitRootLogin prohibit-password"
+      notify:
+        - restart sshd
+
+    # - name: Ensure authorized key for root user is installed.
+    #   authorized_key:
+    #     user: root
+    #     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+    #     state: present
+
+    - name: Configure root prompt and .bashrc aliases.
+      blockinfile:
+        path: /root/.bashrc
+        block: |
+          export LANGUAGE=en_US.UTF-8
+          export LANG=en_US.UTF-8
+          export LC_ALL=en_US.UTF-8
+          PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+          export LS_OPTIONS='--color=auto'
+          eval "`dircolors`"
+          alias ls='ls $LS_OPTIONS'
+          alias l='ls -CF'
+          alias la='ls -AF'
+          alias ll='ls -alF'
+
+    # create local user 
+    - name: Create/update regular user with sudo privileges.
+      user:
+        name: "{{ username }}"
+        password: "$6$srI/jGCUF2bstRGG$jbxAupBNokeOO5WMPQrJ44fHO3uBSggb8Q1RgdvKOI.lL7fb4b4bNqgcUz7ZofjAcmsrrD.iCS7kWYkzIW5qa."
+        groups: sudo
+        create_home: true
+        append: true
+        shell: /bin/bash
+
+    - name: Configure user prompt and .bashrc aliases.
+      blockinfile:
+        path: /home/{{ username }}/.bashrc
+        block: |
+          export LANGUAGE=en_US.UTF-8
+          export LANG=en_US.UTF-8
+          export LC_ALL=en_US.UTF-8
+          PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+          alias l='ls -CF'
+          alias la='ls -AF'
+          alias ll='ls -alF'
+
+    - name: Ensure authorized keys for regular user is installed.
+      authorized_key:
+        user: "{{ username }}"
+        key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+        state: present
+
+    # cleanup
+    - name: Reboot the server if needed.
+      reboot:
+        msg: "Reboot initiated by Ansible because of reboot required file."
+        connect_timeout: 5
+        reboot_timeout: 600
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        test_command: whoami
+      when: reboot_required.stat.exists
+
+    - name: Remove old packages from the cache.
+      apt:
+        autoclean: yes
+
+    - name: Remove dependencies that are no longer needed.
+      apt:
+        autoremove: yes
+        purge: yes
+
+  handlers:
+    - name: restart cron
+      service:
+        name: cron
+        state: restarted
+      when: reboot_required.stat.exists == false
+
+    - name: restart sshd
+      service:
+        name: sshd
+        state: restarted
+      when: reboot_required.stat.exists == false

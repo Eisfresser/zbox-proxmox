@@ -1,0 +1,24 @@
+
+# https://filebrowser.org/installation
+# 
+# docker run \
+#     -v /autopirate:/srv \
+#     -v /autopirate/config/filebrowser/database.db:/database.db \
+#     -v /path/.filebrowser.json:/.filebrowser.json \
+#     -u $(id -u):$(id -g) \
+#     -p 8080:80 \
+#     filebrowser/filebrowser
+
+---
+version: "2.1"
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    user: "1027:100"
+    volumes:
+      - /autopirate/config/filebrowser/database.db:/database.db
+      - /autopirate:/srv
+    ports:
+      - 8090:80
+    restart: unless-stopped

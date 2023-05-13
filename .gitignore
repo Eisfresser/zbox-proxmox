@@ -1,0 +1,12 @@
+.DS_Store
+.vscode/
+venv/
+__pycache__/
+log/
+cache/
+archive/
+node_modules/
+.secret
+.env
+~*.pptx
+

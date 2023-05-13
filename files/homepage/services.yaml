@@ -1,0 +1,60 @@
+- Autopirate:
+  - Jellyfin:
+      description: An alternative to the proprietary Emby and Plex
+      href: http://autopirate.local:8096/
+      icon: jellyfin.png
+  - Plex:
+      description: Plex media server
+      href: http://autopirate.local:32400/web
+      icon: plex.png
+  - Radarr:
+      description: Radarr is a movie collection manager for Usenet and BitTorrent
+        users
+      href: http://autopirate.local
+      icon: radarr.png
+  - Sonarr:
+      description: Sonarr is an internet PVR for Usenet and Torrents
+      href: http://autopirate.local
+      icon: sonarr.png
+  - Readarr:
+      description: Readarr is a ebook collection manager for Usenet and BitTorrent
+        users
+      href: http://autopirate.local
+      icon: readarr.png
+  - Prowlarr:
+      description: Indexer manager/proxy built on the popular *arr stack
+      href: http://autopirate.local
+      icon: prowlarr.png
+  - qBittorrent:
+      description: Torrent client
+      href: http://autopirate.local:8080
+      icon: qbittorrent.png
+      widget:
+        type: qbittorrent
+        url: http://autopirate.local:8080
+        username: admin
+- Appliances:
+  - Filebrowser:
+      description: Autopirate file browser
+      href: http://autopirate.local:8090
+      icon: filebrowser.png
+  - Mini11 PVE:
+      description: Hypervisor node
+      href: https://mini11.local:8006
+      icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
+  - Dagobert:
+      description: Synology NAS
+      href: http://192.168.1.18:5000
+      icon: synology-dsm.png
+  - Jabba:
+      description: Synology NAS
+      href: http://192.168.1.22:5000
+      icon: synology-dsm.png
+  - pfSense:
+      description: Virtual firewall
+      href: https://192.168.1.1
+      icon: pfsense.png
+  - Pi Hole:
+      description: Network-wide ad blocking
+      href: http://pi.hole/admin/index.php
+      icon: pi-hole.png
