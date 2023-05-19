@@ -38,6 +38,10 @@
         url: http://autopirate.local:8080
         # username: admin
 - Appliances:
+  - Open Media Vault:
+      description: Virtual NAS
+      href: http://dagobert2.local
+      icon: openmediavault.png  
   - Filebrowser:
       description: Autopirate file browser
       href: http://autopirate.local:8090

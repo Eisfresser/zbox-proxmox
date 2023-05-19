@@ -15,3 +15,4 @@ services:
     environment:
       - PUID=1027
       - PGID=100
+    restart: unless-stopped      

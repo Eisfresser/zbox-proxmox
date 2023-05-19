@@ -50,7 +50,7 @@ From https://theorangeone.net/posts/mount-nfs-inside-lxc/
 mkdir /autopirate
 apt install nfs-common -y
 
-mount -t nfs 192.168.1.18:/autopirate /autopirate
+mount -t nfs 192.168.1.18:/volume1/autopirate /autopirate
 
 ```
 
@@ -75,3 +75,35 @@ cd /autopirate
 docker compose -f readarr.yml up
 ./autopirate.sh up
 ````
+
+## OpenMediaVault OMV
+
+### Mount external disk
+
+```bash
+lsusb
+
+ID 174c:55aa ASMedia Technology Inc. ASM1051E SATA 6Gb/s bridge, ASM1053E SATA 6Gb/s bridge, ASM1153 SATA 3Gb/s bridge, ASM1153E SATA 6Gb/s bridge
+
+ls -la /dev/disk/by-path/
+
+lrwxrwxrwx 1 root root  10 May 18 19:51 pci-0000:04:00.0-usb-0:2:1.0-scsi-0:0:0:0-part1 -> ../../sdb1
+
+lsblk 
+
+sdb                             8:16   0  3.6T  0 disk
+└─sdb1                          8:17   0  3.6T  0 part
+
+blkid
+
+/dev/sdb1: LABEL="1.42.6-25556" UUID="c3743a56-3be1-4faa-ad68-a83664cddc99" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="37dab241-931f-4c50-815e-a4d82059ed13"
+
+mount UUID="c3743a56-3be1-4faa-ad68-a83664cddc99" /hddock
+
+mount -t nfs 192.168.1.18:/volume1/autopirate /nfs/autopirate
+
+rsync --stats -v -h -a /nfs/autopirate /hddock
+
+
+```
+
