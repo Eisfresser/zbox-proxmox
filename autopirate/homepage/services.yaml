@@ -54,10 +54,6 @@
       description: Hypervisor node
       href: https://mini11.local:8006
       icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
-  - Dagobert:
-      description: Synology NAS
-      href: http://192.168.1.18:5000
-      icon: synology-dsm.png
   - Jabba:
       description: Synology NAS
       href: http://192.168.1.22:5000
