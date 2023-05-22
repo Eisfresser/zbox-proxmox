@@ -40,7 +40,7 @@
 - Appliances:
   - Open Media Vault:
       description: Virtual NAS
-      href: http://dagobert2.local
+      href: http://dagobert.local
       icon: openmediavault.png  
   - Filebrowser:
       description: Autopirate file browser

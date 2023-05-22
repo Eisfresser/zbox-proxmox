@@ -68,13 +68,15 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 locale-gen en_US.UTF-8
 ```
 
+Modify user id of existing user ```usermod -u 1027 flieder```
+
 ### Start stop
 
 ```bash
 cd /autopirate
 docker compose -f readarr.yml up
 ./autopirate.sh up
-````
+```
 
 ## OpenMediaVault OMV
 
@@ -83,7 +85,9 @@ docker compose -f readarr.yml up
 ```bash
 lsusb
 
-ID 174c:55aa ASMedia Technology Inc. ASM1051E SATA 6Gb/s bridge, ASM1053E SATA 6Gb/s bridge, ASM1153 SATA 3Gb/s bridge, ASM1153E SATA 6Gb/s bridge
+Bus 002 Device 005: ID 174c:55aa ASMedia Technology Inc. ASM1051E SATA 6Gb/s bridge, ASM1053E SATA 6Gb/s bridge, ASM1153 SATA 3Gb/s bridge, ASM1153E SATA 6Gb/s bridge # Orico HDD Dock
+
+Bus 004 Device 007: ID 2109:0715 VIA Labs, Inc. VL817 SATA Adaptor # Orico 3.5" USB-C HDD Case
 
 ls -la /dev/disk/by-path/
 
@@ -99,11 +103,8 @@ blkid
 /dev/sdb1: LABEL="1.42.6-25556" UUID="c3743a56-3be1-4faa-ad68-a83664cddc99" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="37dab241-931f-4c50-815e-a4d82059ed13"
 
 mount UUID="c3743a56-3be1-4faa-ad68-a83664cddc99" /hddock
-
 mount -t nfs 192.168.1.18:/volume1/autopirate /nfs/autopirate
-
 rsync --stats -v -h -a /nfs/autopirate /hddock
-
 
 ```
 
