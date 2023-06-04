@@ -15,11 +15,26 @@ readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
 readonly BACKUP_PATH="${BACKUP_DIR}/${DATETIME}"
 readonly LATEST_LINK="${BACKUP_DIR}/latest"
 
-start_time=$SECONDS
-{
-    mkdir -p "${BACKUP_DIR}"
+START=$SECONDS
+LOGFILE="logs/${DATETIME}.log"
 
-    rsync -av --delete \
+exec > >(tee "$LOGFILE") 2>&1
+
+echo "Starting backup at $(date)"
+echo "----------------------------------------"
+echo "Source: ${SOURCE_DIR}"
+echo "Destination: ${BACKUP_PATH}"
+echo "Latest link: ${LATEST_LINK}"
+echo "Logfile: ${LOGFILE}"
+echo "rsync version: $(rsync --version | head -n 1)"
+echo "----------------------------------------"
+echo "Backup script: $0"
+cat $0
+echo "----------------------------------------"
+
+mkdir -p "${BACKUP_DIR}"
+
+rsync -av \
     "${SOURCE_DIR}/" \
     --link-dest "${LATEST_LINK}" \
     --copy-links \
@@ -27,10 +42,10 @@ start_time=$SECONDS
     --exclude=".DS_Store" \
     "${BACKUP_PATH}"
 
-    rm -rf "${LATEST_LINK}"
-    ln -s "${BACKUP_PATH}" "${LATEST_LINK}"
-    echo "${BACKUP_PATH} --> ${LATEST_LINK}"
+rm -rf "${LATEST_LINK}"
+ln -s "${BACKUP_PATH}" "${LATEST_LINK}"
+echo "${BACKUP_PATH} --> ${LATEST_LINK}"
 
-    elapsed_time=$(( SECONDS - start_time ))
-    echo "Backup completed in $elapsed_time seconds"
-} 2>&1 | tee ${DATETIME}.log
+ELAPSED=$(( SECONDS - START ))
+echo "----------------------------------------"
+echo "Backup completed in $ELAPSED seconds"
