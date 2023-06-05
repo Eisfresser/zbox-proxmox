@@ -14,9 +14,9 @@ readonly BACKUP_DIR="/volume1/rsync_dagobert"
 readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
 readonly BACKUP_PATH="${BACKUP_DIR}/${DATETIME}"
 readonly LATEST_LINK="${BACKUP_DIR}/latest"
+readonly LOGFILE="logs/${DATETIME}.log"
 
 START=$SECONDS
-LOGFILE="logs/${DATETIME}.log"
 
 exec > >(tee "$LOGFILE") 2>&1
 
@@ -28,10 +28,8 @@ echo "Latest link: ${LATEST_LINK}"
 echo "Logfile: ${LOGFILE}"
 echo "rsync version: $(rsync --version | head -n 1)"
 echo "----------------------------------------"
-# echo "Backup script: $0"
-# cat $0
-# echo "----------------------------------------"
-
+cat $0 >> ${LOGFILE}
+echo "----------------------------------------" >> ${LOGFILE}
 mkdir -p "${BACKUP_DIR}"
 
 rsync -av \
@@ -40,12 +38,11 @@ rsync -av \
     --copy-links \
     --exclude="@eaDir" \
     --exclude=".DS_Store" \
-    "${BACKUP_PATH}"
+    "${BACKUP_PATH}" >> ${LOGFILE}
 
 rm -rf "${LATEST_LINK}"
 ln -s "${BACKUP_PATH}" "${LATEST_LINK}"
-echo "${BACKUP_PATH} --> ${LATEST_LINK}"
-
 ELAPSED=$(( SECONDS - START ))
 echo "----------------------------------------"
-echo "Backup completed in $ELAPSED seconds"
+df -h ${BACKUP_DIR}
+echo "$(date) Backup completed in $ELAPSED seconds"
