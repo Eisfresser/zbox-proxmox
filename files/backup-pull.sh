@@ -28,9 +28,9 @@ echo "Latest link: ${LATEST_LINK}"
 echo "Logfile: ${LOGFILE}"
 echo "rsync version: $(rsync --version | head -n 1)"
 echo "----------------------------------------"
-echo "Backup script: $0"
-cat $0
-echo "----------------------------------------"
+# echo "Backup script: $0"
+# cat $0
+# echo "----------------------------------------"
 
 mkdir -p "${BACKUP_DIR}"
 
