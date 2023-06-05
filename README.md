@@ -9,6 +9,17 @@ Copy [conky.conf](files/conky.conf) to ```~/.config/conky/conky.conf```.
 
 Setup and update with ```ansible-playbook ansible/setup.yml```
 
+## Pi Hole
+
+Login with ssh key 
+
+```bash
+ssh root@pi.hole
+apt update && apt upgrade -y && apt autoremove -y
+pihole -up
+```
+
+
 ## Autopirate
 
 Runs qbittorrent, prowlarr, sonarr, radarr, readarr, plex, filebrowser, homepage.
@@ -77,6 +88,18 @@ cd /autopirate
 docker compose -f readarr.yml up
 ./autopirate.sh up
 ```
+
+### Update
+
+```bash
+ssh root@autopirate.local
+apt update && apt upgrade -y && apt autoremove -y
+cd /autopirate/
+for file in *.yml; do docker compose -f "$file" down; done
+docker rmi $(docker images -q)
+for file in *.yml; do docker compose -f "$file" up -d; done
+```
+
 
 ## OpenMediaVault OMV
 
