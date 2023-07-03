@@ -6,6 +6,8 @@
 4. [Curator - ElasticSearch Monitoring](docs/curator.md)
 5. [Dagobert - OMV NAS](docs/dagobert.md)
 
+</br>
+
 ## Install
 
 Follow node installations instructions from [minicluster](../minicluster/docs/Installation.md)
@@ -14,6 +16,8 @@ Packages to install manually: ```apt install tasksel conky-all -y```.
 Copy [conky.conf](files/conky.conf) to ```~/.config/conky/conky.conf```.
 
 Setup and update with ```ansible-playbook ansible/setup.yml```
+
+</br>
 
 ## Pi Hole
 

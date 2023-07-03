@@ -5,6 +5,8 @@ Runs qbittorrent, prowlarr, sonarr, radarr, readarr, plex, filebrowser, homepage
 
 Create privileged CT with and features: nesting=1
 
+</br>
+
 ## Install docker
 
 From https://docs.docker.com/engine/install/debian/#install-using-the-repository
@@ -31,6 +33,7 @@ From https://du.nkel.dev/blog/2021-03-25_proxmox_docker/
 ```bash
 echo -e '{\n  "storage-driver": "overlay2"\n}' >> /etc/docker/daemon.json
 ```
+</br>
 
 ## Mount NFS
 
@@ -47,6 +50,8 @@ mount -t nfs 192.168.1.18:/volume1/autopirate /autopirate
 Add to /etc/fstab: ```192.168.1.18:/volume1/autopirate/media  /autopirate/media  nfs  defaults``` (use tabs not blanks)
 Use ```mount -a```to test fstab without rebooting.
 
+</br>
+
 ## Create user and locale
 
 ```bash
@@ -60,6 +65,8 @@ locale-gen en_US.UTF-8
 
 Modify user id of existing user ```usermod -u 1027 flieder```
 
+</br>
+
 ## Start stop
 
 ```bash
@@ -67,6 +74,8 @@ cd /autopirate
 docker compose -f readarr.yml up
 ./autopirate.sh up
 ```
+
+</br>
 
 ## Update
 

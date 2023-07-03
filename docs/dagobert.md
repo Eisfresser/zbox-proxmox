@@ -1,11 +1,15 @@
 
 # Dagobert with OpenMediaVault OMV
 
+</br>
+
 | Disk | Size | Type | Mount | Comment |
 | --- | --- | --- | --- | --- |
 | /dev/sda | 32.0 GiB | QEMU HARDDISK | Virtual |
 | /dev/sdb | 7.28 TiB | WD WD80EFZZ-68BTXN0 | USB HDD |
 | /dev/sdc | 1.82 TiB | Samsung PSSD T7 | USB SSD |
+
+</br>
 
 | Share | Disk | Purpose |
 | --- | --- | --- |
@@ -15,9 +19,13 @@
 
 All shared folders are linked to /shared
 
+</br>
+
 ## Backup to Jabba
 
 Pull backup from Jabba with [rsycn backup script](../files/backup-pull.sh)
+
+</br>
 
 ## Mount external disk
 
