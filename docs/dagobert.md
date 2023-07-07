@@ -24,6 +24,13 @@ All shared folders are linked to /shared
 ## Backup to Jabba
 
 Pull backup from Jabba with [rsycn backup script](../files/backup-pull.sh)
+Script is executied by DSM in a daily task. User rsync, folder /volume1/homes/rsync. Log files go to ./logs
+
+List changed files between two dates
+
+```bash
+ssh rsync@jabba "python" < files/changes.py
+```
 
 </br>
 

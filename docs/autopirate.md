@@ -88,5 +88,3 @@ for file in *.yml; do docker compose -f "$file" down; done
 docker rmi $(docker images -q)
 for file in *.yml; do docker compose -f "$file" up -d; done
 ```
-
-
