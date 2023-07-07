@@ -26,13 +26,12 @@ def toMib(size):
     return size / (1024 * 1024)
 
 
-def truncPathName(pathname):
-    '''Truncate pathname to 72 characters'''
-    c = 72
-    if len(pathname) < c:
+def truncPathName(pathname, n=118):
+    '''Truncate pathname to n characters'''
+    if len(pathname) < n:
         return pathname
     else:
-        return '...' + pathname[-c-3:]
+        return '...' + pathname[-n-3:]
 
 
 def reportOnly(loc, path, only):
@@ -68,7 +67,7 @@ def getLatestDirs(dir):
     return tuple(dirs[-2:])
 
 
-def removeOldDirs(path, days=10):
+def removeOlderDirs(path, days=10):
     '''Remove directories older than 10 days except when it's Monday'''
     now = datetime.now()
     for dir_name in os.listdir(path):
@@ -77,10 +76,12 @@ def removeOldDirs(path, days=10):
         dir_datetime = datetime.strptime(dir_name, "%Y-%m-%d_%H:%M:%S")  # Convert to datetime object
         if (now - dir_datetime).days > days and dir_datetime.weekday() != 0:
             print(f'removing {dir_name}')
-            #shutil.rmtree(os.path.join(path, dir_name))
+            shutil.rmtree(os.path.join(path, dir_name))
 
-root = '/var/services/homes/rsync/test'
+
 root = '/volume1/rsync_dagobert/'
+keepdays = 15
+
 left, right = getLatestDirs(root)
 start = datetime.now()
 print('Changes start time: ', start)
@@ -88,8 +89,9 @@ print(f'Changes from {left} to {right}')
 #dc(left, right)
 end = datetime.now()
 print(f'Changes elapsed time: {end - start}')
+
 start = datetime.now()
-print('Removing old directories start time: ', start)
-removeOldDirs(root, 15)
+print(f'Removing backups older than {keepdays} days start time: ', start)
+removeOlderDirs(root, keepdays)
 end = datetime.now()
-print(f'Removing old directories elapsed time: {end - start}')
+print(f'Removing elapsed time: {end - start}')
