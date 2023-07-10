@@ -48,9 +48,11 @@ def dc(left, right):
     '''Compare two directories recursively.'''
     dcmp = dircmp(left, right)
     if len(dcmp.left_only) > 0: 
-        reportOnly('del', left, dcmp.left_only)
+        reportOnly('deleted', left, dcmp.left_only)
     if len(dcmp.right_only) > 0:
-        reportOnly('add', right, dcmp.right_only)
+        reportOnly('added', right, dcmp.right_only)
+    if len(dcmp.diff_files) > 0:
+        reportOnly('different', right, dcmp.diff_files)
     if len(dcmp.common_dirs) > 0:
         for common_dir in dcmp.common_dirs:
             dc(os.path.join(left, common_dir), os.path.join(right, common_dir))
@@ -61,7 +63,7 @@ def getLatestDirs(dir):
     dirs = [os.path.join(dir, d) 
             for d in os.listdir(dir) 
                 if os.path.isdir(os.path.join(dir, d))
-                and d != 'latest']
+                and d.startswith('20')]
     #dirs.sort(key=lambda x: os.path.getmtime(x))
     dirs.sort()
     return tuple(dirs[-2:])
@@ -71,7 +73,7 @@ def removeOlderDirs(path, days=10):
     '''Remove directories older than 10 days except when it's Monday'''
     now = datetime.now()
     for dir_name in os.listdir(path):
-        if dir_name == 'latest':
+        if not dir_name.startswith('20'):
             continue
         dir_datetime = datetime.strptime(dir_name, "%Y-%m-%d_%H:%M:%S")  # Convert to datetime object
         if (now - dir_datetime).days > days and dir_datetime.weekday() != 0:
@@ -86,7 +88,7 @@ left, right = getLatestDirs(root)
 start = datetime.now()
 print('Changes start time: ', start)
 print(f'Changes from {left} to {right}')
-#dc(left, right)
+dc(left, right)
 end = datetime.now()
 print(f'Changes elapsed time: {end - start}')
 
