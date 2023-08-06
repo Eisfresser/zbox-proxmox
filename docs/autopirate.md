@@ -97,7 +97,7 @@ Run on mac in home folder:
 
 ```bash
 ssh root@autopirate.local apt install rsync
-rsync -rpv ~/Calibre\ Library/ root@autopirate.local:/autopirate/media/books/
+rsync -rv ~/Calibre\ Library/ root@autopirate.local:/autopirate/media/books/
 ```
 
 with calibresync.sh script in /usr/local/sbin
