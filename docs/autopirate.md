@@ -88,3 +88,16 @@ for file in *.yml; do docker compose -f "$file" down; done
 docker rmi $(docker images -q)
 for file in *.yml; do docker compose -f "$file" up -d; done
 ```
+
+<br>
+
+## Sync calibre library
+
+Run on mac in home folder:
+
+```bash
+ssh root@autopirate.local apt install rsync
+rsync -rpv ~/Calibre\ Library/ root@autopirate.local:/autopirate/media/books/
+```
+
+with calibresync.sh script in /usr/local/sbin
