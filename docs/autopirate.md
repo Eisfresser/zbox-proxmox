@@ -82,11 +82,13 @@ docker compose -f readarr.yml up
 
 ```bash
 ssh root@autopirate.local
-apt update && apt upgrade -y && apt autoremove -y
+apt-get update && apt-get upgrade -y && apt-get autoremove -y
 cd /autopirate/
-for file in *.yml; do docker compose -f "$file" down; done
+#for file in *.yml; do docker compose -f "$file" down; done
+./autopirate.sh down
 docker rmi $(docker images -q)
-for file in *.yml; do docker compose -f "$file" up -d; done
+#for file in *.yml; do docker compose -f "$file" up -d; done
+./autopirate.sh up
 ```
 
 <br>
@@ -98,6 +100,7 @@ Run on mac in home folder:
 ```bash
 ssh root@autopirate.local apt install rsync
 rsync -rv ~/Calibre\ Library/ root@autopirate.local:/autopirate/media/books/
+ssh root@autopirate.local docker kill readarr
 ```
 
 with calibresync.sh script in /usr/local/sbin
