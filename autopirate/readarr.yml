@@ -12,7 +12,7 @@ services:
       - TZ="Europe/Zurich"
     volumes:
       - /autopirate/config/readarr:/config
-      - /autopirate/media/books:/books
+      - /autopirate/media/audiobooks:/books
       - /autopirate/downloads:/downloads
     ports:
       - 8787:8787

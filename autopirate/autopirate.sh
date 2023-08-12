@@ -10,7 +10,10 @@ BOLD="\033[1m\033[33m"
 PLAIN="\033[0m"
 
 # set project name in .env file
-echo "COMPOSE_PROJECT_NAME=autopirate" >> ./.env
+if [ ! -f .env ]; then
+    echo "COMPOSE_IGNORE_ORPHANS=True" >> ./.env
+    echo "COMPOSE_PROJECT_NAME=autopirate" >> ./.env
+fi
 
 # Find all YAML files in the current directory
 files=$(find . -maxdepth 1 -type f -name '*.yml')
