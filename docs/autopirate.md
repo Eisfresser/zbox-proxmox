@@ -100,7 +100,7 @@ Run on mac in home folder:
 ```bash
 ssh root@autopirate.local apt install rsync
 rsync -rv ~/Calibre\ Library/ root@autopirate.local:/autopirate/media/books/
-ssh root@autopirate.local docker kill readarr
+ssh root@autopirate.local docker kill calibre-web
 ```
 
 with calibresync.sh script in /usr/local/sbin
