@@ -12,8 +12,8 @@ Create privileged CT with and features: nesting=1
 From https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
 ```bash
-sudo apt-get update
-sudo apt-get install ca-certificates curl gnupg
+apt-get update && apt upgrade -y
+apt-get install ca-certificates curl gnupg sudo -y
 
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -28,10 +28,18 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ````
 
-From https://du.nkel.dev/blog/2021-03-25_proxmox_docker/
+From https://du.nkel.dev/blog/2021-03-25_proxmox_docker/. In LXC:
 
 ```bash
 echo -e '{\n  "storage-driver": "overlay2"\n}' >> /etc/docker/daemon.json
+```
+
+On the Proxmox pyhsical machine, the overlay and aufs* Kernel modules must be enabled to support Docker-LXC-Nesting.
+
+```bash
+echo -e "overlay\naufs" >> /etc/modules-load.d/modules.conf
+#Reboot Proxmox and verify that the modules are active:
+lsmod | grep -E 'overlay|aufs'
 ```
 
 </br>
