@@ -70,3 +70,7 @@
       description: Network-wide ad blocking
       href: http://pi.hole/admin/index.php
       icon: pi-hole.png
+  - Unifi:
+      description: Network controller
+      href: https://unifi.local:8443
+      icon: unifi.png
