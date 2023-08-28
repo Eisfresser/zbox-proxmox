@@ -15,12 +15,13 @@
 Follow node installations instructions from [minicluster](../minicluster/docs/Installation.md)
 Note that minicluster ansible commands cover zbox, but not other commands like start and stop.
 
-Configure backup, mount /volume1/nfs-zbox as nfs-jabba
+Configure backup, mount /volume1/nfs-zbox as nfs-jabba. NFS squash:Map all users to admin (on Synology). Else LXC containers will not be able to write to NFS share.
+
 
 Configure Proxmox VE No-Subscription Repository, add
 ```deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription``` to /etc/apt/sources.list
 
-Packages to install manually: ```apt install tasksel conky-all -y```.
+NO - THIS INSTALLS TOO MUCH: Packages to install manually: ```apt install tasksel conky-all -y```.
 Copy [conky.conf](files/conky.conf) to ```~/.config/conky/conky.conf```.
 
 Setup and update with ```ansible-playbook ansible/setup.yml```
