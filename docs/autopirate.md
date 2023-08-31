@@ -3,7 +3,7 @@
 
 Runs qbittorrent, prowlarr, sonarr, radarr, readarr, plex, filebrowser, homepage.
 
-Create privileged CT with and features: nesting=1
+Create privileged CT and Debian 12 Bookworm with and features: nesting=1. Privilege is needed for NFS mount.
 
 </br>
 
@@ -42,6 +42,30 @@ echo -e "overlay\naufs" >> /etc/modules-load.d/modules.conf
 lsmod | grep -E 'overlay|aufs'
 ```
 
+Slow SSH login? Use ```journalctl``` and look for ```pam_systemd(sshd:session): Failed to create session: Failed to activate service 'org.freedesktop.login1' timed out (service_start_timeout=25000ms)```. If so, disable systemd-logind:
+
+```bash
+systemctl mask systemd-logind
+pam-auth-update # ... and deselect Register user sessions in the systemd control group hierarc[Title](https://192.168.1.5:8006/#v1%253A0%253A%253Dnode%252Fzbox%253A4%253A5%253A%253DcontentVztmpl%253A%253A%253A%253A%253A2)hy
+```
+
+(from <https://gist.github.com/charlyie/76ff7d288165c7d42e5ef7d304245916>)
+
+</br>
+
+## Create user and locale
+
+```bash
+groupadd -g 100 users
+useradd -u 1027 -g users autopirate
+echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen en_US.UTF-8
+```
+
+Or modify user id of existing user ```usermod -u 1027 flieder```
+
 </br>
 
 ## Mount NFS
@@ -52,27 +76,12 @@ From https://theorangeone.net/posts/mount-nfs-inside-lxc/
 mkdir /autopirate
 apt install nfs-common -y
 
-mount -t nfs 192.168.1.18:/volume1/autopirate /autopirate
-
+showmount -e 192.168.1.26
+mount -v -t nfs 192.168.1.26:/export/public /autopirate/media
 ```
 
 Add to /etc/fstab: ```192.168.1.18:/volume1/autopirate/media  /autopirate/media  nfs  defaults``` (use tabs not blanks)
 Use ```mount -a```to test fstab without rebooting.
-
-</br>
-
-## Create user and locale
-
-```bash
-groupadd -g 100 users
-useradd -u 1027 -g users autopirate```
-echo "LC_ALL=en_US.UTF-8" >> /etc/environment
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
-locale-gen en_US.UTF-8
-```
-
-Modify user id of existing user ```usermod -u 1027 flieder```
 
 </br>
 

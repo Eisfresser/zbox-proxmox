@@ -37,21 +37,21 @@ Create VM
     General
         VM ID   5001
         Name    pfsense
-        Options start at boot, order 100, delay 10, shotdown timeout 30
+        Options start at boot, order 100 delay 0, shotdown timeout 30
     OS
         pfsense iso
         Linux 6.x kernel
     System      Default, qemu agent comes later
     Disk
-        Size    8 GB
-        Cache   Write back (unsafe)
+        Size    2 GB
+        Cache   Write back
         Options Discard, IOThread, SSD emulation
-    CPU         Cores   2
+    CPU         Cores   4
     Memory
         MiB     2048
         Min     2048
         Options Ballooning off
-    Network     No device
+    Network     Default
 
 Before starting, edit network devices
     Network device vmbr0
@@ -59,13 +59,19 @@ Before starting, edit network devices
 
 Note: TP-Link 300 was not working with Proxmox 8.0-2, but works with 7.4-16
 
-TODO: disable DNS resolver once all DHCPs leases py pfsense have expired.
+High CPU by dbus-daemon? (from [proxmox forum](https://forum.proxmox.com/threads/udev-malfunction-udisksd-high-cpu-load.99169/)
+
+```bash
+systemctl mask udisks2.service
+systemctl stop udisks2.service```
 
 </br>
 
 ## PiHole
 
 Install LXC debian image, then  <https://docs.pi-hole.net/main/basic-install/>
+
+RAM 512 MB, CPU 2, Disk 2 GB, no privileges
 
 ```bash
 apt install curl -y
