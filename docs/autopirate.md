@@ -3,7 +3,7 @@
 
 Runs qbittorrent, prowlarr, sonarr, radarr, readarr, plex, filebrowser, homepage.
 
-Create privileged CT and Debian 12 Bookworm with and features: nesting=1. Privilege is needed for NFS mount.
+Create privileged CT and Debian 12 Bookworm with and features: mount=nfs, nesting=1
 
 4 GB disk, 4 cores, 4 GB RAM no swap, 
 
@@ -75,6 +75,7 @@ Or modify user id of existing user ```usermod -u 1027 flieder```
 ```bash
 mkdir /autopirate               # docker compose files and scripts
 mkdir /autopirate/config        # mounted to containers for persitent config
+mkdir /autopirate/config/homepage   # homepage config
 mkdir /autopirate/media         # media files on dagobert
 mkdir /autopirate/download      # download partition, add as resource to LXC
 ```
@@ -88,7 +89,7 @@ showmount -e 192.168.1.26
 mount -v -t nfs 192.168.1.26:/export/public /autopirate/media
 ```
 
-Add to /etc/fstab: ```192.168.1.18:/volume1/autopirate/media  /autopirate/media  nfs  defaults``` (use tabs not blanks)
+Add to /etc/fstab: ```192.168.1.26:/export/public  /autopirate/media  nfs  defaults``` (use tabs not blanks)
 Use ```mount -a```to test fstab without rebooting.
 
 </br>
@@ -117,6 +118,30 @@ docker rmi $(docker images -q)
 ```
 
 <br>
+
+
+## qBittorrent
+
+Default pwd admin:adminadmin, change to flieder
+Bypass auth from localhost
+192.168.1.0/24
+172.18.0.0/16
+
+## Jellyfin
+
+No default pwd, refresh page to load setup wizard
+Set pwd for flieder
+
+## Prowlar
+
+Authentication disabled for local network
+Set pwd for flieder
+Add piratebay indexer
+Add apps, use autopirate.local as host name for both sides and get api key from app settings/general
+
+
+
+
 
 ## Sync calibre library
 
