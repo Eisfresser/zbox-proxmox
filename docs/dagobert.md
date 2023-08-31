@@ -20,6 +20,7 @@
 All shared folders are linked to /shares
 
 ```bash
+mkdir /shares
 ln -s /srv/dev-disk-by-uuid-4bfc574a-336c-412d-84fb-5e76d94a55e8/homes/ /shares/homes
 ln -s /srv/dev-disk-by-uuid-4bfc574a-336c-412d-84fb-5e76d94a55e8/public/ /shares/public
 ln -s /srv/dev-disk-by-uuid-204552fa-aba7-4106-9f4c-d923902c63aa/timemachine/ /shares/timemachine
@@ -34,7 +35,7 @@ Users
 rolf;1026;tags;rolf.moser@gmail.com;password;/bin/bash;users;false
 flieder;1027;tags;flieder10@gmail.com;password;/bin/bash;users;false
 peta;1030;tags;peta.mcsharry@gmail.com;password;/bin/bash;users;false
-rsync;1031;tags;rsync@jabba.local;password;/bin/bash;users;false
+#rsync;1031;tags;rsync@jabba.local;password;/bin/bash;users;false
 ```
 
 
