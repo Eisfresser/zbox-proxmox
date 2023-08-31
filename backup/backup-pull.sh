@@ -7,7 +7,7 @@
 # User rsync@jabba must be able to ssh to root@dagobert without password, so
 # add the public key of rsync@jabba to the authorized_keys file of root@dagobert
 # DSM does not have ssh-copy-id, so 
-# cat .ssh/id_rsa.pub | ssh root@dagobert 'cat >> /root/.ssh/authorized_keys'
+# cat .ssh/id_rsa.pub | ssh root@dagobert.local 'cat >> /root/.ssh/authorized_keys'
 #
 # Copy source to jabba: 
 #   scp -O backup/backup-pull.sh rsync@jabba:/var/services/homes/rsync/backup-pull.sh && scp -O backup/changes.py rsync@jabba:/var/services/homes/rsync/changes.py

@@ -5,6 +5,8 @@ Runs qbittorrent, prowlarr, sonarr, radarr, readarr, plex, filebrowser, homepage
 
 Create privileged CT and Debian 12 Bookworm with and features: nesting=1. Privilege is needed for NFS mount.
 
+4 GB disk, 4 cores, 4 GB RAM no swap, 
+
 </br>
 
 ## Install docker
@@ -46,7 +48,7 @@ Slow SSH login? Use ```journalctl``` and look for ```pam_systemd(sshd:session): 
 
 ```bash
 systemctl mask systemd-logind
-pam-auth-update # ... and deselect Register user sessions in the systemd control group hierarc[Title](https://192.168.1.5:8006/#v1%253A0%253A%253Dnode%252Fzbox%253A4%253A5%253A%253DcontentVztmpl%253A%253A%253A%253A%253A2)hy
+pam-auth-update # ... and deselect Register user sessions in the systemd control group hierarchy
 ```
 
 (from <https://gist.github.com/charlyie/76ff7d288165c7d42e5ef7d304245916>)
@@ -57,7 +59,7 @@ pam-auth-update # ... and deselect Register user sessions in the systemd control
 
 ```bash
 groupadd -g 100 users
-useradd -u 1027 -g users autopirate
+useradd -u 1027 -g users flieder
 echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
