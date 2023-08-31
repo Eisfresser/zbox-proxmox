@@ -70,14 +70,20 @@ Or modify user id of existing user ```usermod -u 1027 flieder```
 
 </br>
 
-## Mount NFS
+## Create autopirate folder and mount NFS
 
-From https://theorangeone.net/posts/mount-nfs-inside-lxc/
+```bash
+mkdir /autopirate               # docker compose files and scripts
+mkdir /autopirate/config        # mounted to containers for persitent config
+mkdir /autopirate/media         # media files on dagobert
+mkdir /autopirate/download      # download partition, add as resource to LXC
+```
+
+From <https://theorangeone.net/posts/mount-nfs-inside-lxc/>
 
 ```bash
 mkdir /autopirate
 apt install nfs-common -y
-
 showmount -e 192.168.1.26
 mount -v -t nfs 192.168.1.26:/export/public /autopirate/media
 ```

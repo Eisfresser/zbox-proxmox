@@ -38,8 +38,6 @@ peta;1030;tags;peta.mcsharry@gmail.com;password;/bin/bash;users;false
 #rsync;1031;tags;rsync@jabba.local;password;/bin/bash;users;false
 ```
 
-
-
 </br>
 
 ## Install
@@ -116,7 +114,7 @@ ls -la /dev/disk/by-path/
 lrwxrwxrwx 1 root root  10 May 18 19:51 pci-0000:04:00.0-usb-0:2:1.0-scsi-0:0:0:0-part1 -> ../../sdb1
 
 lsblk 
-
+```
 
 ### Cockpit - not used
 
