@@ -7,6 +7,7 @@
 5. [Autopirate - Media Management](docs/autopirate.md)
 6. [Curator - ElasticSearch Monitoring](docs/curator.md)
 7. [Dagobert - OMV NAS](docs/dagobert.md)
+8. [Infra](docs/infra.md)
 
 </br>
 
@@ -82,3 +83,7 @@ pihole -a -p
 apt update && apt upgrade -y
 pihole -up
 ````
+
+When this is shown at login: ```bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)```
+run ```sudo dpkg-reconfigure locales``` and select en_US.UTF-8
+

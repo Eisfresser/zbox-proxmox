@@ -13,7 +13,7 @@ services:
       - MEM_LIMIT=1024 #optional
       - MEM_STARTUP=1024 #optional
     volumes:
-      - /unifi/config:/config
+      - /infra/unifi:/config
     ports:
       - 8443:8443 # webui
       - 3478:3478/udp # STUN service

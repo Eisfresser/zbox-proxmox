@@ -37,6 +37,7 @@
           - sysbench
           - python3
           - python3-pip
+          - pipenv
           - lshw
           - ca-certificates 
           - gnupg
