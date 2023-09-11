@@ -72,6 +72,6 @@
       icon: pi-hole.png
   - Unifi:
       description: Network controller
-      href: https://infra.local:8443
+      href: https://unifi.infra.fqp.ch
       icon: unifi.png
 
