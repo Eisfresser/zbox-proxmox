@@ -34,3 +34,27 @@ Admin ui <http://192.168.1.25:81>
 Email:    admin@example.com
 Password: changeme
 
+## Apt Cacher NG
+
+Loosely following <https://github.com/sameersbn/docker-apt-cacher-ng>
+Access apt cacher ng at <http://localhost:3142/>
+
+Build and run container
+
+```bash
+cd infra/apt-cacher-ng
+mkdir -p /tmp/apt-cacher-ng-cache
+docker build . -t eisfresser/apt-cacher-ng
+docker run -d --name apt-cacher-ng -p 3142:3142 -v /tmp/apt-cacher-ng-cache:/var/cache/apt-cacher-ng eisfresser/apt-cacher-ng
+docker rm apt-cacher-ng
+```
+
+Push container to github
+
+```bash
+export $(xargs <.env)
+echo $GITHUB_USERNAME $GITHUB_WRITE_DEL_PACKAGES_TOKEN
+docker login --username $GITHUB_USERNAME --password $GITHUB_WRITE_DEL_PACKAGES_TOKEN ghcr.io
+docker build . -t ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
+docker push ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
+``` 
