@@ -44,17 +44,16 @@ Build and run container
 ```bash
 cd infra/apt-cacher-ng
 mkdir -p /tmp/apt-cacher-ng-cache
-docker build . -t eisfresser/apt-cacher-ng
-docker run -d --name apt-cacher-ng -p 3142:3142 -v /tmp/apt-cacher-ng-cache:/var/cache/apt-cacher-ng eisfresser/apt-cacher-ng
+docker build . -t ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
+docker run -d --name apt-cacher-ng -p 3142:3142 -v /tmp/apt-cacher-ng-cache:/var/cache/apt-cacher-ng ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
 docker rm apt-cacher-ng
 ```
 
-Push container to github
+Push container to github, check if it is private <https://github.com/Eisfresser?tab=packages>
 
 ```bash
 export $(xargs <.env)
 echo $GITHUB_USERNAME $GITHUB_WRITE_DEL_PACKAGES_TOKEN
 docker login --username $GITHUB_USERNAME --password $GITHUB_WRITE_DEL_PACKAGES_TOKEN ghcr.io
-docker build . -t ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
 docker push ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
 ``` 
