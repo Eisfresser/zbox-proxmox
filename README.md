@@ -7,7 +7,7 @@
 5. [Autopirate - Media Management](docs/autopirate.md)
 6. [Curator - ElasticSearch Monitoring](docs/curator.md)
 7. [Dagobert - OMV NAS](docs/dagobert.md)
-8. [Infra](docs/infra.md)
+8. [Infra - Infrastructure Containers](docs/infra.md)
 
 </br>
 
