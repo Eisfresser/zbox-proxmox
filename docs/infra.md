@@ -45,7 +45,9 @@ Build and run container
 cd infra/apt-cacher-ng
 mkdir -p /tmp/apt-cacher-ng-cache
 docker build . -t ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
-docker run -d --name apt-cacher-ng -p 3142:3142 -v /tmp/apt-cacher-ng-cache:/var/cache/apt-cacher-ng ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
+docker run -d --name apt-cacher-ng -p 3142:3142 \
+    -v /tmp/apt-cacher-ng-cache:/var/cache/apt-cacher-ng \
+    ghcr.io/eisfresser/zbox-proxmox/apt-cacher-ng:latest
 docker rm apt-cacher-ng
 ```
 
