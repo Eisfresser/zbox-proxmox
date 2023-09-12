@@ -15,6 +15,7 @@ apt-get update && apt-get install elasticsearch
 
 Result
 
+```bash
 apt-get update && apt-get install elasticsearch
 Get:1 http://security.debian.org bullseye-security InRelease [48.4 kB]
 Hit:2 http://deb.debian.org/debian bullseye InRelease
@@ -78,7 +79,7 @@ NOT starting on installation, please execute the following statements to configu
  sudo systemctl enable elasticsearch.service
 You can start elasticsearch service by executing
  sudo systemctl start elasticsearch.service
-
+```
 
 
 
