@@ -1,15 +1,31 @@
 
 # Infra
 
-Runs unifi
+Runs nginx proxy manager, unifi, apt-cacher-ng
 
-Create non-privileged CT and Debian 12 Bookworm
+DNS third level domain <https://infra.fqp.ch>
 
-4 GB disk, 4 cores, 4 GB RAM no swap, static ip
+## LXC container
 
-Add config disk mounted to /infra, 4 GB, backup
+Create non-privileged CT and Debian 12 Bookworm. 4 GB disk, 4 cores, 4 GB RAM no swap, static ip. Add config disk mounted to /infra, 4 GB, backup. [Install docker in LXC](docker.md).
 
-[Install docker in LXC](docker.md)
+</br>
+
+## Nginx Proxy Manager
+
+https://github.com/NginxProxyManager/nginx-proxy-manager
+
+Admin ui <http://192.168.1.25:81>
+Email:    admin@example.com
+Password: changeme
+
+Create let's encrypt wildcard certificate for *.infra.fqp.ch.
+
+Proxy config
+| CName | Service | Redirect to |
+---------------------------------
+| unifi.infra.fqp.ch | Unifi Controller | unifi-controller:8443 |
+| apt.infra.fqp.ch | Apt Cacher NG | apt-cacher-ng:3142 |
 
 </br>
 
@@ -25,14 +41,7 @@ Access unifi controller at <https://infra.local:8443/>
 
 For Unifi to __adopt other devices__, it is required to __change the inform IP address__. Because Unifi runs inside Docker by default it uses an IP address not accessible by other devices. To change this go to Settings > System > Advanced and set the Inform Host to a hostname or IP address accessible by your devices. Additionally the checkbox "Override" has to be checked, so that devices can connect to the controller during adoption (devices use the inform-endpoint during adoption).
 
-
-## Nginx Proxy Manager
-
-https://github.com/NginxProxyManager/nginx-proxy-manager
-
-Admin ui <http://192.168.1.25:81>
-Email:    admin@example.com
-Password: changeme
+</br>
 
 ## Apt Cacher NG
 
