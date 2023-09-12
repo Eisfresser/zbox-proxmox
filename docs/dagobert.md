@@ -104,13 +104,12 @@ Connect to <https://dagobert.local:9090>
 
 ```bash
 lsusb
-
-Bus 002 Device 005: ID 174c:55aa ASMedia Technology Inc. ASM1051E SATA 6Gb/s bridge, ASM1053E SATA 6Gb/s bridge, ASM1153 SATA 3Gb/s bridge, ASM1153E SATA 6Gb/s bridge # Orico HDD Dock
-
-Bus 004 Device 007: ID 2109:0715 VIA Labs, Inc. VL817 SATA Adaptor # Orico 3.5" USB-C HDD Case
+ # Orico HDD Dock
+Bus 002 Device 005: ID 174c:55aa ASMedia Technology Inc. ASM1051E SATA 6Gb/s bridge, ASM1053E SATA 6Gb/s bridge, ASM1153 SATA 3Gb/s bridge, ASM1153E SATA 6Gb/s bridge
+# Orico 3.5" USB-C HDD Case
+Bus 004 Device 007: ID 2109:0715 VIA Labs, Inc. VL817 SATA Adaptor 
 
 ls -la /dev/disk/by-path/
-
 lrwxrwxrwx 1 root root  10 May 18 19:51 pci-0000:04:00.0-usb-0:2:1.0-scsi-0:0:0:0-part1 -> ../../sdb1
 
 lsblk 
