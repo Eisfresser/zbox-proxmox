@@ -12,7 +12,8 @@ services:
     volumes:
       - /autopirate/config/jellyfin:/config
       - /autopirate/media/tvseries:/data/tvshows
-      - /autopirate/media/movies:/data/movies 
+      - /autopirate/media/movies:/data/movies
+      - /autopirate/downloads/jellyfin-transcode:/transcode
     ports:
       - 8096:8096
       - 8920:8920 

@@ -15,5 +15,6 @@ services:
     volumes:
       - /autopirate/config/plex:/config
       - /autopirate/media/tvseries:/tv
-      - /autopirate/media/movies:/movies       
+      - /autopirate/media/movies:/movies
+      - /autopirate/downloads/plex-transcode:/transcode
     restart: unless-stopped
