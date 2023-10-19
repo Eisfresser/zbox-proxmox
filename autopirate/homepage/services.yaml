@@ -74,4 +74,9 @@
       description: Network controller
       href: https://unifi.infra.fqp.ch
       icon: unifi.png
+  - Picam:
+      description: Pi Noir Cam
+      href: http://picam.fqp.ch:8889/cam/
+      icon: unifi-protect.png
+
 
