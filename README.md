@@ -8,6 +8,7 @@
 6. [Curator - ElasticSearch Monitoring](docs/curator.md)
 7. [Dagobert - OMV NAS](docs/dagobert.md)
 8. [Infra - Infrastructure Containers](docs/infra.md)
+9. [MacMini Ubuntu Desktop](#MacMini)
 
 </br>
 
@@ -83,8 +84,52 @@ pihole -a -p
 # update pihole
 apt update && apt upgrade -y
 pihole -up
-````
+```
 
 When this is shown at login: ```bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)```
 run ```sudo dpkg-reconfigure locales``` and select en_US.UTF-8
 
+## MacMini Ubuntu Desktop
+
+Enable wakeup from suspend on keyboard press (from <https://forums.linuxmint.com/viewtopic.php?p=1524543&sid=26cfac1903429672a3594c6de9a8500e#p1524543>)
+
+```bash
+# find RAPOO usb id
+lsusb -t
+/:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 5000M
+/:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 1: Dev 4, If 0, Class=Hub, Driver=hub/4p, 480M
+            |__ Port 1: Dev 5, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+            |__ Port 1: Dev 5, If 2, Class=Human Interface Device, Driver=usbhid, 12M
+            |__ Port 1: Dev 5, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+            |__ Port 2: Dev 6, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+            |__ Port 2: Dev 6, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 2: Dev 3, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/6p, 480M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci-pci/2p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/8p, 480M
+        |__ Port 8: Dev 3, If 0, Class=Hub, Driver=hub/2p, 480M
+            |__ Port 1: Dev 4, If 0, Class=Hub, Driver=hub/3p, 12M
+                |__ Port 3: Dev 8, If 2, Class=Vendor Specific Class, Driver=btusb, 12M
+                |__ Port 3: Dev 8, If 0, Class=Vendor Specific Class, Driver=btusb, 12M
+                |__ Port 3: Dev 8, If 3, Class=Application Specific Interface, Driver=, 12M
+                |__ Port 3: Dev 8, If 1, Class=Wireless, Driver=btusb, 12M
+            |__ Port 2: Dev 5, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+
+
+sudo dmesg | grep /input/
+...
+[    3.053086] input: RAPOO RAPOO 2.4G Wireless Device as /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1.1/3-1.1.2/3-1.1.2:1.0/0003:24AE:2000.0008/input/input11
+[    3.115540] input: RAPOO RAPOO 2.4G Wireless Device Mouse as /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1.1/3-1.1.2/3-1.1.2:1.1/0003:24AE:2000.0009/input/input12
+[    3.115638] input: RAPOO RAPOO 2.4G Wireless Device System Control as /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1.1/3-1.1.2/3-1.1.2:1.1/0003:24AE:2000.0009/input/input13
+[    3.172436] input: RAPOO RAPOO 2.4G Wireless Device Consumer Control as /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1.1/3-1.1.2/3-1.1.2:1.1/0003:24AE:2000.0009/input/input14
+
+cat /sys/bus/usb/devices/3-1/power/wakeup
+disabled
+echo enabled | sudo tee /sys/bus/usb/devices/3-1/power/wakeup
+enabled
+cat /sys/bus/usb/devices/3-1/power/wakeup
+enabled
+```
