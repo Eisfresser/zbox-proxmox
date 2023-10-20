@@ -46,10 +46,10 @@
       description: Virtual NAS
       href: http://dagobert.local
       icon: openmediavault.png  
-  - Filebrowser:
-      description: Autopirate file browser
-      href: http://autopirate.local:8090
-      icon: filebrowser.png
+  # - Filebrowser:
+  #     description: Autopirate file browser
+  #     href: http://autopirate.local:8090
+  #     icon: filebrowser.png
   - Zbox PVE:
       description: Hypervisor node
       href: https://zbox.local:8006
