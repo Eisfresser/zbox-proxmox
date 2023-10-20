@@ -78,5 +78,8 @@
       description: Pi Noir Cam
       href: http://picam.fqp.ch:8889/cam/
       icon: unifi-protect.png
-
+  - Viseron:
+      description: Viseron NVR
+      href: http://nano.fqp.ch:8888
+      icon: viseron.png
 
