@@ -133,3 +133,20 @@ enabled
 cat /sys/bus/usb/devices/3-1/power/wakeup
 enabled
 ```
+
+## Home Asssistant
+
+Install virtual appliance following <https://bobcares.com/blog/add-qcow2-to-proxmox/>
+
+Download appliance, uncompress on mac and copy to zbox ```scp haos_ova-11.0.qcow2 root@zbox.local:/var/lib/vz/template```
+
+Create VM with no OS, 4 GB RAM, 2 CPU, no disk,  network, then import appliance
+
+```bash
+cd /var/lib/vz/template
+qm importdisk 5220 haos_ova-11.0.qcow2 local-lvm
+```
+
+Attach disk vom image: Hardwared > unused disk , attach as VirtIO Block
+Set BIOS to Uefi
+Set boot oderder: Options > Boot Order > Disk/SCSI0

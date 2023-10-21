@@ -41,8 +41,21 @@
         type: qbittorrent
         url: http://autopirate.local:8080
         # username: admin
+- SmartHome:
+  - Home Assistant:
+      description: Home automation
+      href: http://has.fqp.ch:8123
+      icon: home-assistant.png
+  - Picam:
+      description: Pi noir cam
+      href: http://picam.fqp.ch:8889/cam/
+      icon: unifi-protect.png
+  - Viseron:
+      description: Network video recorder
+      href: http://nano.fqp.ch:8888
+      icon: viseron.png
 - Appliances:
-  - Open Media Vault:
+  - Dagobert:
       description: Virtual NAS
       href: http://dagobert.local
       icon: openmediavault.png  
@@ -50,14 +63,6 @@
   #     description: Autopirate file browser
   #     href: http://autopirate.local:8090
   #     icon: filebrowser.png
-  - Zbox PVE:
-      description: Hypervisor node
-      href: https://zbox.local:8006
-      icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
-  - Mini11 PVE:
-      description: Hypervisor node
-      href: https://mini11.local:8006
-      icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
   - Jabba:
       description: Synology NAS
       href: http://192.168.1.22:5000
@@ -74,12 +79,10 @@
       description: Network controller
       href: https://unifi.infra.fqp.ch
       icon: unifi.png
-  - Picam:
-      description: Pi Noir Cam
-      href: http://picam.fqp.ch:8889/cam/
-      icon: unifi-protect.png
-  - Viseron:
-      description: Viseron NVR
-      href: http://nano.fqp.ch:8888
-      icon: viseron.png
+  - Zbox PVE:
+      description: Hypervisor node
+      href: https://zbox.local:8006
+      icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
+
+
 
