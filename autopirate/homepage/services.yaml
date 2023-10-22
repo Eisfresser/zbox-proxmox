@@ -41,19 +41,21 @@
         type: qbittorrent
         url: http://autopirate.local:8080
         # username: admin
+
 - SmartHome:
   - Home Assistant:
       description: Home automation
       href: http://has.fqp.ch:8123
       icon: home-assistant.png
-  - Picam:
-      description: Pi noir cam
-      href: http://picam.fqp.ch:8889/cam/
-      icon: unifi-protect.png
   - Viseron:
       description: Network video recorder
       href: http://nano.fqp.ch:8888
       icon: viseron.png
+  - Picam:
+      description: Pi noir cam
+      href: http://picam.fqp.ch:8889/cam/
+      icon: unifi-protect.png
+
 - Appliances:
   - Dagobert:
       description: Virtual NAS
