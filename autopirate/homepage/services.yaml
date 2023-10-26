@@ -1,45 +1,45 @@
 - Autopirate:
   - Jellyfin:
       description: Media server, username is flieder, no password
-      href: http://autopirate.local:8096/
+      href: http://autopirate.fqp.ch:8096/
       icon: jellyfin.png
   - Plex:
       description: Plex media server, plex user is flieder10@gmail.com
-      href: http://autopirate.local:32400/web
+      href: http://autopirate.fqp.ch:32400/web
       icon: plex.png
   - Calibre:
       description: Calibre-Web ebook server
-      href: http://autopirate.local:8083
+      href: http://autopirate.fqp.ch:8083
       icon: calibre.png
   - Overseerr:
       description: Overseerr is a request management and media discovery applications
-      href: http://autopirate.local:5055
+      href: http://autopirate.fqp.ch:5055
       icon: overseerr.png
   - Radarr:
       description: Radarr is a movie collection manager for Usenet and BitTorrent
         users
-      href: http://autopirate.local:7878
+      href: http://autopirate.fqp.ch:7878
       icon: radarr.png
   - Sonarr:
       description: Sonarr is an internet PVR for Usenet and Torrents
-      href: http://autopirate.local:8989
+      href: http://autopirate.fqp.ch:8989
       icon: sonarr.png
   - Readarr:
       description: Readarr is a ebook collection manager for Usenet and BitTorrent
         users
-      href: http://autopirate.local:8787
+      href: http://autopirate.fqp.ch:8787
       icon: readarr.png
   - Prowlarr:
       description: Indexer manager/proxy built on the popular *arr stack
-      href: http://autopirate.local:9696
+      href: http://autopirate.fqp.ch:9696
       icon: prowlarr.png
   - qBittorrent:
       description: Torrent client
-      href: http://autopirate.local:8080
+      href: http://autopirate.fqp.ch:8080
       icon: qbittorrent.png
       widget:
         type: qbittorrent
-        url: http://autopirate.local:8080
+        url: http://autopirate.fqp.ch:8080
         # username: admin
 
 - SmartHome:
@@ -59,11 +59,11 @@
 - Appliances:
   - Dagobert:
       description: Virtual NAS
-      href: http://dagobert.local
+      href: http://dagobert.fqp.ch
       icon: openmediavault.png  
   # - Filebrowser:
   #     description: Autopirate file browser
-  #     href: http://autopirate.local:8090
+  #     href: http://autopirate.fqp.ch:8090
   #     icon: filebrowser.png
   - Jabba:
       description: Synology NAS
@@ -83,7 +83,7 @@
       icon: unifi.png
   - Zbox PVE:
       description: Hypervisor node
-      href: https://zbox.local:8006
+      href: https://zbox.fqp.ch:8006
       icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
 
 
