@@ -24,11 +24,11 @@
       description: Sonarr is an internet PVR for Usenet and Torrents
       href: http://autopirate.fqp.ch:8989
       icon: sonarr.png
-  - Readarr:
-      description: Readarr is a ebook collection manager for Usenet and BitTorrent
-        users
-      href: http://autopirate.fqp.ch:8787
-      icon: readarr.png
+  # - Readarr:
+  #     description: Readarr is a ebook collection manager for Usenet and BitTorrent
+  #       users
+  #     href: http://autopirate.fqp.ch:8787
+  #     icon: readarr.png
   - Prowlarr:
       description: Indexer manager/proxy built on the popular *arr stack
       href: http://autopirate.fqp.ch:9696
