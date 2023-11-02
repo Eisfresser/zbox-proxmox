@@ -9,6 +9,8 @@
 7. [Dagobert - OMV NAS](docs/dagobert.md)
 8. [Infra - Infrastructure Containers](docs/infra.md)
 9. [MacMini Ubuntu Desktop](#MacMini)
+10. [Home Assistant](#home-assistant)
+
 
 </br>
 
@@ -150,3 +152,12 @@ qm importdisk 5220 haos_ova-11.0.qcow2 local-lvm
 Attach disk vom image: Hardwared > unused disk , attach as VirtIO Block
 Set BIOS to Uefi
 Set boot oderder: Options > Boot Order > Disk/SCSI0
+
+
+## Immich
+
+Create non-privileged CT and Debian 12 Bookworm. 6 GB disk, 4 cores, 4 GB RAM no swap, static ip. Add config disk mounted to /infra, 800 GB, no backup. [Install docker in LXC](docker.md).
+
+<https://immich.app/docs/install/docker-compose>
+
+

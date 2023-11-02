@@ -47,6 +47,6 @@ Run Lazydocker in container
 ```bash
 docker run --rm -it -v \
 /var/run/docker.sock:/var/run/docker.sock \
--v ./lazydocker:/.config/jesseduffield/lazydocker \
+-v ./.lazydocker:/.config/jesseduffield/lazydocker \
 lazyteam/lazydocker
 ```

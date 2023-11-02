@@ -51,10 +51,18 @@
       description: Network video recorder
       href: http://nano.fqp.ch:8888
       icon: viseron.png
+  - Shinobi:
+      description: Network video recorder
+      href: http://nano.fqp.ch:8080
+      icon: shinobi.png
   - Picam:
       description: Pi noir cam
       href: http://picam.fqp.ch:8889/cam/
       icon: unifi-protect.png
+  - Immich:
+      description: Local backup for Apple Photos
+      href: http://immich.fqp.ch:2283
+      icon: immich.png
 
 - Appliances:
   - Dagobert:
