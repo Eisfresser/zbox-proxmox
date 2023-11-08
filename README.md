@@ -6,7 +6,7 @@
 4. [Dagobert - OMV NAS](docs/dagobert.md)
 5. [Autopirate - Media Management](docs/autopirate.md)
 6. [Curator - ElasticSearch Monitoring](docs/curator.md)
-7. [Dagobert - OMV NAS](docs/dagobert.md)
+7. [Jabba - Pull Backukp](#jabba)
 8. [Infra - Infrastructure Containers](docs/infra.md)
 9. [MacMini Ubuntu Desktop](#MacMini)
 10. [Home Assistant](#home-assistant)
@@ -90,6 +90,17 @@ pihole -up
 
 When this is shown at login: ```bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)```
 run ```sudo dpkg-reconfigure locales``` and select en_US.UTF-8
+
+## Jabba
+
+User rsync has a scheduled job for pull backups. Connect with 
+
+```bash
+ssh jabba.local
+```
+
+It pulls all shares from dagobert://shares with rsync. 
+
 
 ## MacMini Ubuntu Desktop
 
