@@ -2,27 +2,33 @@
   - Jellyfin:
       description: Media server, username is flieder, no password
       href: http://autopirate.fqp.ch:8096/
+      siteMonitor: http://autopirate.fqp.ch:8096/
       icon: jellyfin.png
   - Plex:
       description: Plex media server, plex user is flieder10@gmail.com
       href: http://autopirate.fqp.ch:32400/web
+      siteMonitor: http://autopirate.fqp.ch:32400/
       icon: plex.png
   - Calibre:
       description: Calibre-Web ebook server
       href: http://autopirate.fqp.ch:8083
+      siteMonitor: http://autopirate.fqp.ch:8083
       icon: calibre.png
   - Overseerr:
       description: Overseerr is a request management and media discovery applications
       href: http://autopirate.fqp.ch:5055
+      siteMonitor: http://autopirate.fqp.ch:5055
       icon: overseerr.png
   - Radarr:
       description: Radarr is a movie collection manager for Usenet and BitTorrent
         users
       href: http://autopirate.fqp.ch:7878
+      siteMonitor: http://autopirate.fqp.ch:7878
       icon: radarr.png
   - Sonarr:
       description: Sonarr is an internet PVR for Usenet and Torrents
       href: http://autopirate.fqp.ch:8989
+      siteMonitor: http://autopirate.fqp.ch:8989
       icon: sonarr.png
   # - Readarr:
   #     description: Readarr is a ebook collection manager for Usenet and BitTorrent
@@ -32,10 +38,12 @@
   - Prowlarr:
       description: Indexer manager/proxy built on the popular *arr stack
       href: http://autopirate.fqp.ch:9696
+      siteMonitor: http://autopirate.fqp.ch:9696
       icon: prowlarr.png
   - qBittorrent:
       description: Torrent client
       href: http://autopirate.fqp.ch:8080
+      siteMonitor: http://autopirate.fqp.ch:8080
       icon: qbittorrent.png
       widget:
         type: qbittorrent
@@ -46,28 +54,34 @@
   - Home Assistant:
       description: Home automation
       href: http://has.fqp.ch:8123
+      siteMonitor: http://has.fqp.ch:8123
       icon: home-assistant.png
   - Viseron:
       description: Network video recorder
       href: http://nano.fqp.ch:8888
+      siteMonitor: http://nano.fqp.ch:8888
       icon: viseron.png
   - Shinobi:
       description: Network video recorder
       href: http://nano.fqp.ch:8080
+      siteMonitor: http://nano.fqp.ch:8080
       icon: shinobi.png
   - Picam:
       description: Pi noir cam
       href: http://picam.fqp.ch:8889/cam/
+      siteMonitor: http://picam.fqp.ch:8889/cam/
       icon: unifi-protect.png
   - Immich:
       description: Local backup for Apple Photos
       href: http://immich.fqp.ch:2283
+      siteMonitor: http://immich.fqp.ch:2283
       icon: immich.png
 
 - Appliances:
   - Dagobert:
       description: Virtual NAS
       href: http://dagobert.fqp.ch
+      siteMonitor: http://dagobert.fqp.ch
       icon: openmediavault.png  
   # - Filebrowser:
   #     description: Autopirate file browser
@@ -76,22 +90,27 @@
   - Jabba:
       description: Synology NAS
       href: http://192.168.1.22:5000
+      siteMonitor: http://192.168.1.22:5000
       icon: synology-dsm.png
   - pfSense:
       description: Virtual firewall
       href: https://192.168.1.1
+      siteMonitor: https:///192.168.1.1
       icon: pfsense.png
   - Pi Hole:
       description: Network-wide ad blocking
       href: http://pi.hole/admin/index.php
+      siteMonitor: http://pi.hole/admin/index.php
       icon: pi-hole.png
   - Unifi:
       description: Network controller
       href: https://unifi.infra.fqp.ch
+      siteMonitor: https://unifi.infra.fqp.ch
       icon: unifi.png
   - Zbox PVE:
       description: Hypervisor node
       href: https://zbox.fqp.ch:8006
+      siteMonitor: https://zbox.fqp.ch:8006
       icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
 
 

@@ -10,6 +10,7 @@
 8. [Infra - Infrastructure Containers](docs/infra.md)
 9. [MacMini Ubuntu Desktop](#MacMini)
 10. [Home Assistant](#home-assistant)
+11. [Homepage]/(#homepage)
 
 
 </br>
@@ -171,4 +172,9 @@ Create non-privileged CT and Debian 12 Bookworm. 6 GB disk, 4 cores, 4 GB RAM no
 
 <https://immich.app/docs/install/docker-compose>
 
+
+## Homepage
+
+LXC with 512 MB RAM and 2 GB HDD. Install docker with <doc/docker.md>
+Use homepage/deploy.sh to deploy. 
 
