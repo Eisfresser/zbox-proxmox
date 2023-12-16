@@ -64,7 +64,13 @@ Before starting, edit network devices
 
 Note: TP-Link 300 was not working with Proxmox 8.0-2, but works with 7.4-16
 
-High CPU by dbus-daemon? (from [proxmox forum](https://forum.proxmox.com/threads/udev-malfunction-udisksd-high-cpu-load.99169/)
+Interface Assignments:
+    WAN vtnet1
+    LAN vtnet0
+
+Default user and password: admin pfsense
+
+High CPU by dbus-daemon? (from [proxmox forum](https://forum.proxmox.com/threads/udev-malfunction-udisksd-high-cpu-load.99169/) On Proxmox Server.
 
 ```bash
 systemctl mask udisks2.service
@@ -104,6 +110,8 @@ It pulls all shares from dagobert://shares with rsync.
 
 
 ## MacMini Ubuntu Desktop
+
+To boot from USB, connect a USB keyboard by wire. Press *AltGr* when the chime sounds. If there is no picture on the screen, wait a bit, press cursor to the right once and press enter. This will most likely select the USB boot medium. There might be something wired going on with HDMI. Wait a few minutes, maybe it is booting and you will eventually see a picture. 
 
 Enable wakeup from suspend on keyboard press (from <https://forums.linuxmint.com/viewtopic.php?p=1524543&sid=26cfac1903429672a3594c6de9a8500e#p1524543>)
 
