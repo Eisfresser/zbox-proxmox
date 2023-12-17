@@ -1,6 +1,8 @@
-# set screen refresh rate to 50 Hz for old Samsung display on mac maini
-
-xrandr --newmode "1920x1200_58.00"  185.50  1920 2048 2248 2576  1200 1203 1209 1243 -hsync +vsync
-xrandr --addmode HDMI-3 "1920x1200_50.00"
-xrandr --output HDMI-3 --mode "1920x1200_50.00"
-pause
+# switch to x.org instead of wayland by setting WaylandEnable=false in /etc/gdm3/custom.conf
+OUTPUT=XWAYLAND0
+OUTPUT=HDMI-3
+# get modeline with cvt 1920 1200 50
+xrandr --newmode "1920x1200_50.00"  158.25  1920 2040 2240 2560  1200 1203 1209 1238 -hsync +vsync
+xrandr --addmode $OUTPUT "1920x1200_50.00"
+xrandr --output $OUTPUT --mode "1920x1200_50.00"
+sleep 1

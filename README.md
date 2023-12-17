@@ -111,7 +111,9 @@ It pulls all shares from dagobert://shares with rsync.
 
 ## MacMini Ubuntu Desktop
 
-To boot from USB, connect a USB keyboard by wire. Press *AltGr* when the chime sounds. If there is no picture on the screen, wait a bit, press cursor to the right once and press enter. This will most likely select the USB boot medium. There might be something wired going on with HDMI. Wait a few minutes, maybe it is booting and you will eventually see a picture. 
+To boot from USB, connect a USB keyboard by wire. Press __AltGr__ when the chime sounds. If there is no picture on the screen, wait a bit, press cursor to the right once and press enter. This will most likely select the USB boot medium. There might be something wired going on with HDMI. Wait a few minutes, maybe it is booting and you will eventually see a picture. 
+
+To switch to terminal screens from desktop: Ctrl-Alt-F3 to F6
 
 Enable wakeup from suspend on keyboard press (from <https://forums.linuxmint.com/viewtopic.php?p=1524543&sid=26cfac1903429672a3594c6de9a8500e#p1524543>)
 
