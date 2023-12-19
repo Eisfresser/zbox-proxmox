@@ -1,3 +1,7 @@
 title: Flieder 10 Home
 statusStyle: "dot"
 
+layout:
+  Media:
+    style: row
+    columns: 3s
