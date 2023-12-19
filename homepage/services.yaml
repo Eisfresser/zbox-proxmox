@@ -109,8 +109,8 @@
       icon: unifi.png
   - Zbox PVE:
       description: Hypervisor node
-      href: https://zbox.fqp.ch:8006
-      siteMonitor: https://zbox.fqp.ch:8006
+      href: https://192.168.1.5:8006
+      siteMonitor: https:/192.168.1.5:8006
       icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
 
 
