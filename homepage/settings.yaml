@@ -4,4 +4,4 @@ statusStyle: "dot"
 layout:
   Media:
     style: row
-    columns: 3s
+    columns: 3

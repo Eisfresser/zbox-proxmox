@@ -68,7 +68,7 @@
       siteMonitor: http://picam.fqp.ch:8889/cam/
       icon: unifi-protect.png
 
-- Infrastucture:
+- Infra:
   - Dagobert:
       description: Virtual NAS
       href: http://dagobert.fqp.ch
@@ -89,6 +89,11 @@
       href: http://pi.hole/admin/index.php
       siteMonitor: http://pi.hole/admin/index.php
       icon: pi-hole.png
+  - NPM:
+      description: Nginx Proxy Manager
+      href: http://infra.fqp.ch:81
+      siteMonitor: http://infra.fqp.ch:81
+      icon: nginx-proxy-manager.png
   - Unifi:
       description: Network controller
       href: https://unifi.infra.fqp.ch
@@ -99,11 +104,12 @@
       href: https://192.168.1.5:8006
       siteMonitor: https:/192.168.1.5:8006
       icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
-# test
+
+- Test:
   - Unraid:
       description: Unraid test VM
-      href: https://192.168.1.40
-      siteMonitor: https:/192.168.1.40
+      href: http://192.168.1.40
+      siteMonitor: http:/192.168.1.40
       icon: unraid.png
   - TrueNAS:
       description: TrueNAS test VM
