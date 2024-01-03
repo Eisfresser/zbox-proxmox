@@ -72,16 +72,16 @@
       description: Virtual NAS
       href: http://dagobert.fqp.ch
       siteMonitor: http://dagobert.fqp.ch
-      icon: openmediavault.png  
+      icon: truenas.png  
   - Jabba:
       description: Backup NAS
-      href: http://192.168.1.22:5000
-      siteMonitor: http://192.168.1.22:5000
+      href: http://jabba.fqp.ch:5000
+      siteMonitor: http://jabba.fqp.ch:5000
       icon: synology-dsm.png
   - pfSense:
       description: Virtual firewall
-      href: https://192.168.1.1
-      siteMonitor: https:///192.168.1.1
+      href: https://pfsense.fqp.ch
+      siteMonitor: https://pfsense.fqp.ch
       icon: pfsense.png
   - Pi Hole:
       description: Network-wide ad blocking
@@ -100,23 +100,18 @@
       icon: unifi.png
   - Zbox PVE:
       description: Hypervisor node
-      href: https://192.168.1.5:8006
-      siteMonitor: https:/192.168.1.5:8006
+      href: https://zbox.fqp.ch:8006
+      siteMonitor: https://zbox.fqp.ch:8006
       icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
+  - Heimdall PVE:
+      description: Hypervisor node
+      href: https://heimdall.fqp.ch:8006
+      siteMonitor: https://heimdall.fqp.ch:8006
+      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox-light.png
 
 - Test:
   - Unraid:
       description: Unraid test VM
-      href: http://192.168.1.40
-      siteMonitor: http:/192.168.1.40
+      href: http://unraid.fqp.ch
+      siteMonitor: http://unraid.fqp.ch
       icon: unraid.png
-  - TrueNAS:
-      description: TrueNAS test VM
-      href: https://192.168.1.41
-      siteMonitor: https:/192.168.1.41
-      icon: truenas.png
-  - Jabba2:
-      description: Backup NAS
-      href: https://192.168.1.42:8006
-      siteMonitor: https:/192.168.1.42:8006
-      icon: https://play-lh.googleusercontent.com/TT36Nsjyt0Yn8eyPAXuNK0bJsXmryP9ovsp7qdOy9sulYlr7v2Le5Ckf0I9S3AiaaXs=w480-h960
