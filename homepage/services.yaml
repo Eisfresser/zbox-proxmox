@@ -70,8 +70,8 @@
 - Infra:
   - Dagobert:
       description: Virtual NAS
-      href: http://dagobert.fqp.ch
-      siteMonitor: http://dagobert.fqp.ch
+      href: https://dagobert.fqp.ch
+      siteMonitor: https://dagobert.fqp.ch
       icon: truenas.png  
   - Jabba:
       description: Backup NAS
