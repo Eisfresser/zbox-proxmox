@@ -98,6 +98,20 @@ pihole -up
 When this is shown at login: ```bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)```
 run ```sudo dpkg-reconfigure locales``` and select en_US.UTF-8
 
+When there is a diagnostics message that FTL db is getting too large and the disk is > 90%:
+
+1. Save FTL DB to dagobert://home/rolf/logs
+2. On pihole, flush logs and reset FTL db
+
+```bash
+pihole flush
+sudo systemctl stop pihole-FTL
+sudo rm /etc/pihole/pihole-FTL.db
+sudo systemctl stop pihole-FTL
+
+```
+
+
 ## Jabba
 
 User rsync has a scheduled job for pull backups. Connect with 
