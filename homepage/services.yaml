@@ -66,6 +66,11 @@
       href: http://picam.fqp.ch:8889/cam/
       siteMonitor: http://picam.fqp.ch:8889/cam/
       icon: unifi-protect.png
+  - QR Code:
+      description: Local files with QR code
+      href: https://qrcode.fqp.ch/
+      siteMonitor: https://qrcode.fqp.ch/health
+      icon: /icons/qr-code-125.svg
 
 - Infra:
   - Dagobert:
