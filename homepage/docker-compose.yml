@@ -12,6 +12,7 @@ services:
     volumes:
       - /var/homepage:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
+      - /var/homepage/icons:/app/public/icons # (optional) For custom icons
     environment:
       - PUID=1027
       - PGID=100
