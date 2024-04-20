@@ -71,6 +71,11 @@
       href: https://grafana.fqp.ch/
       siteMonitor: https://grafana.fqp.ch/
       icon: grafana.png
+  - Kibana:
+      description: Security incident and event management
+      href: https://kibana.fqp.ch:5601
+      siteMonitor: https://kibana.fqp.ch:5601
+      icon: kibana.png
   - QR Code:
       description: Local files with QR code
       href: https://qrcode.fqp.ch/
