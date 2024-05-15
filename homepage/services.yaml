@@ -76,6 +76,11 @@
       href: https://kibana.fqp.ch:5601
       siteMonitor: https://kibana.fqp.ch:5601
       icon: kibana.png
+  - PgAdmin:
+      description: SQL database manager
+      href: https://postgres.fqp.ch
+      siteMonitor: https://postgres.fqp.ch
+      icon: pgadmin.png
   - QR Code:
       description: Local files with QR code
       href: https://qrcode.fqp.ch/
