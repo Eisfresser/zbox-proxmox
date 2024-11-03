@@ -109,3 +109,13 @@ ssh root@autopirate.local docker kill calibre-web
 ```
 
 with calibresync.sh script in /usr/local/sbin
+
+## Reset calibre-web admin pwd
+
+SSH into autopirate
+
+```bash
+docker exec
+cd /app/calibre-web -it calibre-web /bin/bash
+python3 ./cps.py -p /config/app.db  -s admin:<password>
+```

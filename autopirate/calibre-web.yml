@@ -1,7 +1,6 @@
 # https://github.com/janeczku/calibre-web
 
 ---
-version: "2.1"
 services:
   calibre-web:
     image: lscr.io/linuxserver/calibre-web:latest

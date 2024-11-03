@@ -1,7 +1,5 @@
 # https://hub.docker.com/r/linuxserver/sonarr
-
 ---
-version: "2.1"
 services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest

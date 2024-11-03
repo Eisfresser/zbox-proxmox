@@ -1,7 +1,5 @@
 # https://hub.docker.com/r/linuxserver/radarr
-
 ---
-version: "2.1"
 services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
