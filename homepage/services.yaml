@@ -86,6 +86,11 @@
       href: https://qrcode.fqp.ch/
       siteMonitor: https://qrcode.fqp.ch/health
       icon: /icons/qr-code-125.svg
+  - Webcam:
+      description: Reolink CX410
+      href: https://10.10.5.20/
+      siteMonitor: https://10.10.5.20/
+      icon: /icons/reolink.svg  
 
 - Infra:
   - Dagobert:
@@ -105,7 +110,7 @@
       icon: pfsense.png
   - opnSense:
       description: Virtual firewall
-      href: https://192.168.1.11
+      href: https://10.10.0.1/
       siteMonitor: https://192.168.1.11
       icon: opnsense.png
   - Pi Hole:
