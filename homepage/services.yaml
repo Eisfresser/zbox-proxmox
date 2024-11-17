@@ -86,6 +86,11 @@
       href: https://qrcode.fqp.ch/
       siteMonitor: https://qrcode.fqp.ch/health
       icon: /icons/qr-code-125.svg
+  - NVR Viewer:
+      description: Viewer for network video recorders
+      href: https://nvrv.fqp.ch/
+      siteMonitor: https://nvrv.fqp.ch/health
+      icon: unifi-protect.png 
   - Webcam:
       description: Reolink CX410
       href: https://10.10.5.20/
