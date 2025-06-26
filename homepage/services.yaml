@@ -71,11 +71,11 @@
       href: https://grafana.fqp.ch/
       siteMonitor: https://grafana.fqp.ch/
       icon: grafana.png
-  - Kibana:
-      description: Security incident and event management
-      href: https://kibana.fqp.ch:5601
-      siteMonitor: https://kibana.fqp.ch:5601
-      icon: kibana.png
+#   - Kibana:
+#       description: Security incident and event management
+#       href: https://kibana.fqp.ch:5601
+#       siteMonitor: https://kibana.fqp.ch:5601
+#       icon: kibana.png
   - PgAdmin:
       description: SQL database manager
       href: https://postgres.fqp.ch
@@ -91,10 +91,15 @@
       href: https://nvrv.fqp.ch/
       siteMonitor: https://nvrv.fqp.ch/health
       icon: unifi-protect.png 
-  - Webcam:
-      description: Reolink CX410
+  - Webcam Carport:
+      description: Reolink Cx410
       href: https://10.10.5.20/
       siteMonitor: https://10.10.5.20/
+      icon: /icons/reolink.svg  
+  - Webcam Garden:
+      description: Reolink Cx410W
+      href: https://10.10.5.21/
+      siteMonitor: https://10.10.5.21/
       icon: /icons/reolink.svg  
 
 - Infra:
@@ -103,11 +108,11 @@
       href: https://dagobert.fqp.ch
       siteMonitor: https://dagobert.fqp.ch
       icon: truenas.png  
-  - Jabba:
-      description: Backup NAS
-      href: http://jabba.fqp.ch:5000
-      siteMonitor: http://jabba.fqp.ch:5000
-      icon: synology-dsm.png
+#   - Jabba:
+#       description: Backup NAS
+#       href: http://jabba.fqp.ch:5000
+#       siteMonitor: http://jabba.fqp.ch:5000
+#       icon: synology-dsm.png
   - pfSense:
       description: Legacy virtual firewall
       href: https://pfsense.fqp.ch
@@ -116,7 +121,7 @@
   - opnSense:
       description: Virtual firewall
       href: https://10.10.0.1/
-      siteMonitor: https://192.168.1.11
+      siteMonitor: https://10.10.0.1/
       icon: opnsense.png
   - Pi Hole:
       description: Network-wide ad blocking
