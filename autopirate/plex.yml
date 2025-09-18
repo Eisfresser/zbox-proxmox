@@ -1,4 +1,10 @@
 # https://hub.docker.com/r/linuxserver/plex
+#
+# To allow local playback, add local LAN segments and the server's IP address and name in the Plex settings:
+#
+# Settings > Network > Custom server access URLs: https://192.168.1.28:32400,https://autopirate.fqp.ch:32400
+# Settings > Network > List of IP addresses and networks that are allowed without authentication: 10.10.0.0/16,192.168.1.0/24,172.16.0.0/12
+#
 ---
 services:
   plex:
