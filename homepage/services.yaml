@@ -125,8 +125,8 @@
       icon: opnsense.png
   - Pi Hole:
       description: Network-wide ad blocking
-      href: http://pi.hole/admin/index.php
-      siteMonitor: http://pi.hole/admin/index.php
+      href: http://pi.hole/admin/
+      siteMonitor: http://pi.hole/admin/login
       icon: pi-hole.png
   - Unifi:
       description: Network controller
