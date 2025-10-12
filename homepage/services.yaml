@@ -120,8 +120,8 @@
       icon: pfsense.png
   - opnSense:
       description: Virtual firewall
-      href: https://10.10.0.1/
-      siteMonitor: https://10.10.0.1/
+      href: https://10.10.8.1/
+      siteMonitor: https://10.10.8.1/
       icon: opnsense.png
   - Pi Hole:
       description: Network-wide ad blocking
