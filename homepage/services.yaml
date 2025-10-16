@@ -128,11 +128,21 @@
       href: http://pi.hole/admin/
       siteMonitor: http://pi.hole/admin/login
       icon: pi-hole.png
+  - Prism: 
+      description: Service management
+      href: https://prism.fqp.ch:4567
+      siteMonitor: https://prism.fqp.ch
+      icon: photoprism-light.png
   - Unifi:
       description: Network controller
       href: https://unifi.fqp.ch
       siteMonitor: https://unifi.fqp.ch
       icon: unifi.png
+  - Ansible:
+      description: Ansible Semaphore
+      href: http://ansible:3000
+      siteMonitor: http://ansible:3000
+      icon: ansible.png
   - Zbox PVE:
       description: Hypervisor node
       href: https://zbox.fqp.ch:8006
