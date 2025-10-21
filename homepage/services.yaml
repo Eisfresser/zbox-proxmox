@@ -108,11 +108,6 @@
       href: https://dagobert.fqp.ch
       siteMonitor: https://dagobert.fqp.ch
       icon: truenas.png  
-#   - Jabba:
-#       description: Backup NAS
-#       href: http://jabba.fqp.ch:5000
-#       siteMonitor: http://jabba.fqp.ch:5000
-#       icon: synology-dsm.png
   - pfSense:
       description: Legacy virtual firewall
       href: https://pfsense.fqp.ch
@@ -130,8 +125,8 @@
       icon: pi-hole.png
   - Prism: 
       description: Service management
-      href: https://prism.fqp.ch:4567
-      siteMonitor: https://prism.fqp.ch
+      href: http://prism:8000
+      siteMonitor: http://prism:8000
       icon: photoprism-light.png
   - Unifi:
       description: Network controller
